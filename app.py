@@ -5,6 +5,14 @@ import numpy as np
 from recommendation import cnv,dme,drusen,normal
 import tempfile
 
+import os
+import gdown
+model_path = "Trained_Model.keras"
+file_id = "1mjN44zOSyLgM_lDV5Hkxo97KzUuvW7IJ"
+
+if not os.path.exists(model_path):
+    gdown.download(f'https://drive.google.com/uc?export=download&id={file_id}', model_path, quiet=False)
+
 
 #Tensorflow Model Prediction
 def model_prediction(test_image_path):
